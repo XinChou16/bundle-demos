@@ -1,0 +1,1 @@
+document.write('<h1>Hello Moshi, auto generate</h1>')
