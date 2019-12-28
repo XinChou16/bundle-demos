@@ -27,7 +27,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '',
+      title: '12',
       filename: 'index.html',
       template: 'template.html'
     }),

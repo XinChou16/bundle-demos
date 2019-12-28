@@ -1,0 +1,22 @@
+{
+    "name": "03-test",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server --port 8000",
+        "dev": "webpack --mode development --watch",
+        "build": "rm -r dist/ && webpack --mode production"
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.7.3",
+        "css-loader": "^3.3.2",
+        "html-webpack-plugin": "^3.2.0",
+        "mini-css-extract-plugin": "^0.8.0",
+        "node-sass": "^4.13.0",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^8.0.0",
+        "style-loader": "^1.0.1",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0"
+    }
+}

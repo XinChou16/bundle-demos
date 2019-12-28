@@ -8,5 +8,10 @@
 </head>
 <body>
     <p>tpl</p>
+    <%= require("html-loader?interpolate!./part.html") %>
+    <h2>template: <%= obj.foo %></h2>
+    <h2><%= webpackConfig.output.publicPath %></h2>
+    <script type="text/javascript" src="<%= script %>"></script>
+
 </body>
 </html>

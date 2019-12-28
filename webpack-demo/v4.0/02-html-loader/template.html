@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    </head>
+    <body>
+        <p>tpl</p>
+        <script src="//xxx.com/${require(`./config.json`).timeStamp}"></script>
+        <h2><%= foo %></h2>
+        <script> <%= require('html-loader!./src/main.js')%>  </script>
+        <h2>嵌套引入</h2>
+        <%= require('html-loader!./part-02.html') %>
+    </body>
+</html>
