@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    
+    <% for (var chunk of webpack.chunks) {
+        for (var file of chunk.files) {
+          if (file.match(/\.(js|css)$/)) { %>
+        <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+    <% }}} %>
+
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.publicPath %>main.css">
+</head>
+<body>
+    <p>tpl</p>
+
+    <p><%= htmlWebpackPlugin.options.foo %></p>
+    <p><%= htmlWebpackPlugin.options.fooObj.foo %></p>
+
+    <% if (htmlWebpackPlugin.options.flag) {%>
+        <section>flag here</section>
+    <% } else { throw new Error ('config require flag!')} %>
+
+
+    <% for (var chunk in htmlWebpackPlugin.options.scripts) { %>
+        <script src="<%= htmlWebpackPlugin.options.scripts[chunk] %>"></script>
+    <% } %>
+
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+        <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+</body>
+</html>
