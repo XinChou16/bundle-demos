@@ -1,0 +1,11 @@
+{
+  "name": "preset-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "babel.config.js",
+  "scripts": {
+    "start": "../node_modules/.bin/babel index.ts -o dist.js"
+  },
+  "keywords": [],
+  "author": ""
+}
