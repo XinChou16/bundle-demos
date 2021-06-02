@@ -1,0 +1,20 @@
+{
+  "name": "start",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:amd": "rollup main.js --file bundle/bundle-amd.js --format amd",
+    "build:cjs": "rollup main.js --file bundle/bundle-cjs.js --format cjs",
+    "build:es": "rollup main.js --file bundle/bundle-es.js --format es",
+    "build:iife": "rollup main.js --file bundle/bundle-iife.js --format iife",
+    "build:umd": "rollup main.js --file bundle/bundle-umd.js --format umd",
+    "build:system": "rollup main.js --file bundle/bundle-system.js --format system"
+  },
+  "keywords": [],
+  "author": "",
+  "description": "",
+  "devDependencies": {
+    "rollup": "^2.50.5"
+  }
+}
