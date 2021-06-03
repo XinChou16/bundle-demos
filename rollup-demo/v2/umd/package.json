@@ -1,0 +1,16 @@
+{
+  "name": "umd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "rollup --config rollup.config.js",
+    "dev:bak": "../node_modules/.bin/rollup --watch --config rollup.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "2.7.6"
+  }
+}

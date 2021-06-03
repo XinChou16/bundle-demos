@@ -1,0 +1,6 @@
+{
+  "name": "start",
+  "scripts": {
+    "start": "../node_modules/.bin/babel index.js -o bundle.js"
+  }
+}
