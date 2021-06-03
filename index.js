@@ -1,0 +1,1 @@
+console.log('run husky pre commit hook');

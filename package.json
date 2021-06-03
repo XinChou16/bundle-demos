@@ -1,0 +1,15 @@
+{
+  "name": "bundle-demos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:XinChou16/bundle-demos.git",
+  "author": "Violet <violetsshine@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^6.0.0"
+  },
+  "scripts": {
+    "test": "node index.js",
+    "prepare": "husky install"
+  }
+}
