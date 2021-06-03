@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "prepare": "husky install husky-demo/husky"
+    "prepare": "cd .. && husky install husky-demo/.husky"
   },
   "husky": {
     "hooks": {
