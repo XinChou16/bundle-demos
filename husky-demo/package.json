@@ -8,7 +8,7 @@
     "lint-staged": "^11.0.0"
   },
   "scripts": {
-      "start": "node inde.js"
+      "start": "node index.js"
   },
   "husky": {
       "hooks": {
