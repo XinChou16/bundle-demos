@@ -6,10 +6,21 @@
   "author": "Violet <violetsshine@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1"
   },
   "scripts": {
     "test": "node index.js",
+    "format": "prettier --write index.js",
     "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "index.js": "^0.0.3"
   }
 }
