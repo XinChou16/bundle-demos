@@ -1,6 +1,4 @@
-function add(a, b) {
-    return a + b;
-}
+import { add } from './add';
 
 const result = add(1, 2);
 

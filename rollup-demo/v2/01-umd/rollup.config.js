@@ -1,6 +1,6 @@
-const path = require('path')
+const path = require('path');
 
-const resolve = (file) => path.resolve(__dirname, file)
+const resolve = (file) => path.resolve(__dirname, file);
 
 module.exports = [
   {
@@ -10,9 +10,9 @@ module.exports = [
       format: 'umd',
       name: 'Utils',
       amd: {
-        id: 'lib/utils'
+        id: 'lib/utils',
       },
-      banner: '/* Xin@2021 */'
-    }
+      banner: '/* Xin@2021 */',
+    },
   },
-]
+];
