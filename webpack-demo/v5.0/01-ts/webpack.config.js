@@ -7,8 +7,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.t1sx?$/,
         use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.ts$/,
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
     ],
@@ -16,9 +21,9 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-//   devServer: {
-//       contentBase: './dist'
-//   },
+  //   devServer: {
+  //       contentBase: './dist'
+  //   },
   plugins: [
     //   new HtmlWebpackPlugin({
     //       template: 'index.html'
