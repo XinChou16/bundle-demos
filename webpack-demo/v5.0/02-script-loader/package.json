@@ -1,0 +1,15 @@
+{
+  "name": "02-script-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "../node_modules/.bin/webpack serve --mode development --port 8000",
+    "build": "../node_modules/.bin/webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "sideEffects": "false",
+  "devDependencies": {}
+}
