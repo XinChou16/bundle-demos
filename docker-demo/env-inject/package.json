@@ -1,0 +1,19 @@
+{
+  "name": "env-inject",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "vite",
+    "build": "vite build",
+    "build:test": "node index.js",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "execa": "^5.1.1",
+    "vite": "^2.5.4"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
