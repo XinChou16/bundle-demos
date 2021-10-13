@@ -95,27 +95,51 @@ class InsertContentHtmlPlugin {
   constructor(option) {
     this.injectOptions = this.normalizeOption(option);
   }
-  apply(complier) {
+  apply1(complier) {
+    // 兼容参考 https://github.com/jharris4/html-webpack-tags-plugin/blob/1.0.10/index.js#L424
     complier.plugin('compilation', (compilation) => {
-      compilation.plugin(
-        'html-webpack-plugin-before-html-processing',
-        (data, callback) => {
-          // console.log('before=====\n\n', data.html);
+      console.log('123', typeof complier.hooks);
+      var self = this;
+      function onBeforeHtmlProcessing(data, callback) {
+        // console.log('before=====\n\n', data.html);
 
-          for (const injectOption of this.injectOptions) {
-            const { content, ...option } = injectOption;
-            data.html = insertContent(data.html, content, option);
-          }
-          // console.log('after=====\n\n', data.html);
-
-          if (callback) {
-            callback(null, data);
-          } else {
-            return Promise.resolve(data);
-          }
+        for (const injectOption of self.injectOptions) {
+          const { content, ...option } = injectOption;
+          data.html = insertContent(data.html, content, option);
         }
-      );
+        // console.log('after=====\n\n', data.html);
+
+        if (callback) {
+          callback(null, data);
+        } else {
+          return Promise.resolve(data);
+        }
+      }
+      if (compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing) {
+        console.log(1111);
+        compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync(
+          'html-insert-webpack-plugin',
+          onBeforeHtmlProcessing
+        );
+      } else {
+        console.log(222);
+        compilation.plugin(
+          'html-webpack-plugin-before-html-processing',
+          onBeforeHtmlProcessing
+        );
+      }
     });
+  }
+  apply(compiler) {
+    if (compiler.hooks) {
+      function onCompilation(...arg) {
+        console.log(arg);
+      }
+      compiler.hooks.compilation.tap(
+        'htmlWebpackIncludeAssetsPlugin',
+        onCompilation
+      );
+    }
   }
   normalizeOption(option) {
     if (!Array.isArray(option)) {
