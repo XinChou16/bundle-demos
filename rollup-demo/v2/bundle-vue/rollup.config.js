@@ -11,6 +11,8 @@ import alias from '@rollup/plugin-alias';
 import vue from 'rollup-plugin-vue';
 import serve from 'rollup-plugin-serve';
 
+import example from './plugins/example';
+
 const resolve = (file) => path.resolve(__dirname, file);
 
 const env = process.env.NODE_ENV || 'development';
@@ -19,6 +21,7 @@ const isProd = env === 'production';
 export default [
   {
     input: resolve('index.js'),
+    // input: './plugins/vconsole.js',
     output: {
       file: resolve('./dist/main.js'),
       format: 'es',
@@ -50,6 +53,16 @@ export default [
       isProd && babel(),
       // isProd && terser(),
       json(),
+    ],
+  },
+  {
+    input: './entry-plugin.js',
+    plugins: [commonjs(), nodeResolve(), example()],
+    output: [
+      {
+        file: 'dist/bundle.js',
+        format: 'cjs',
+      },
     ],
   },
 ];
