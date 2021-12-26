@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig-base",
+    "compilerOptions": {
+      "target": "ES2015",
+      "module": "umd",
+      "outDir": "./lib",
+      "declaration": true
+    },
+    "include": ["src/**/*"]
+  }
